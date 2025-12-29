@@ -6,7 +6,7 @@ const output = document.getElementById("output"); //output display text
 addCardButton.addEventListener("click", () => {
     //when add card button is pressed
     const name = nameElement.value; //get name value
-    const rarity = rarityOption.value; //get rarity values
+    const rarity = rarityOption.value; //get rarity value
     cards.push({ name: name, rarity: rarity }); //add card to list of cards in collection
-    output.innerText = JSON.stringify(cards); //update output text
+    output.innerText = `Number of cards: ${cards.length}\n${JSON.stringify(cards)}`; //update output text
 });
