@@ -49,10 +49,14 @@ generateRandomCardButton.addEventListener("click", () => {
                       : card.rarity === "legendary"
                         ? 0.025
                         : 0; //add card weight to weight sum
-        if (number <= weightSum) {
+        if (number <= weightSum && cards.length > 0) {
             //if random number is less than or equal to weight sum
             randomCardOutput.innerText = `You got a ${card.rarity} card: ${card.name}`; //display generated random card
             return; //exit function
+        } else {
+            alert(
+                "No cards in collection! Please add cards to the collection first.",
+            ); //alert user that there are no cards in collection
         }
     }
 });
