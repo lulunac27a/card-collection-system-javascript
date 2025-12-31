@@ -20,17 +20,18 @@ generateRandomCardButton.addEventListener("click", () => {
     //when generate random card button is pressed
     const totalWeight = cards.reduce(
         (total, card) =>
-            total + card.rarity === "common"
+            total +
+            (card.rarity === "common"
                 ? 0.5
                 : card.rarity === "uncommon"
-                  ? 0.25
-                  : card.rarity === "rare"
-                    ? 0.15
-                    : card.rarity === "epic"
-                      ? 0.075
-                      : card.rarity === "legendary"
-                        ? 0.025
-                        : 0,
+                    ? 0.25
+                    : card.rarity === "rare"
+                        ? 0.15
+                        : card.rarity === "epic"
+                            ? 0.075
+                            : card.rarity === "legendary"
+                                ? 0.025
+                                : 0),
         0,
     ); //calculate total weight of all cards based on card rarity
     const number = Math.random() * totalWeight; //generate random number between 0 and total weight
@@ -41,14 +42,14 @@ generateRandomCardButton.addEventListener("click", () => {
             card.rarity === "common"
                 ? 0.5
                 : card.rarity === "uncommon"
-                  ? 0.25
-                  : card.rarity === "rare"
-                    ? 0.15
-                    : card.rarity === "epic"
-                      ? 0.075
-                      : card.rarity === "legendary"
-                        ? 0.025
-                        : 0; //add card weight to weight sum
+                    ? 0.25
+                    : card.rarity === "rare"
+                        ? 0.15
+                        : card.rarity === "epic"
+                            ? 0.075
+                            : card.rarity === "legendary"
+                                ? 0.025
+                                : 0; //add card weight to weight sum
         if (number <= weightSum && cards.length > 0) {
             //if random number is less than or equal to weight sum
             randomCardOutput.innerText = `You got a ${card.rarity} card: ${card.name}`; //display generated random card
