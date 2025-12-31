@@ -50,7 +50,10 @@ generateRandomCardButton.addEventListener("click", () => {
                             : card.rarity === "legendary"
                                 ? 0.025
                                 : 0; //add card weight to weight sum
-        if (number <= weightSum && cards.length > 0) {
+        if (
+            number <= totalWeight ||
+            (number <= weightSum && cards.length > 0)
+        ) {
             //if random number is less than or equal to weight sum
             randomCardOutput.innerText = `You got a ${card.rarity} card: ${card.name}`; //display generated random card
             return; //exit function
