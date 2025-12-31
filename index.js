@@ -54,6 +54,7 @@ generateRandomCardButton.addEventListener("click", () => {
             randomCardOutput.innerText = `You got a ${card.rarity} card: ${card.name}`; //display generated random card
             return; //exit function
         } else {
+            //if there are no cards in collection
             alert(
                 "No cards in collection! Please add cards to the collection first.",
             ); //alert user that there are no cards in collection
