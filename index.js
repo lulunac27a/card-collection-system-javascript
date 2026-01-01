@@ -14,7 +14,7 @@ addCardButton.addEventListener("click", () => {
     cards.push({ name: name, rarity: rarity }); //add card to list of cards in collection
     output.innerText = `Number of cards: ${cards.length}\n${JSON.stringify(cards, null, 2)}`; //update output text
     nameElement.value = ""; //clear name value
-    rarityOption.value = "common"; //reset rarity value
+    rarityOption.value = "common"; //reset rarity value to default value
 });
 generateRandomCardButton.addEventListener("click", () => {
     //when generate random card button is pressed
